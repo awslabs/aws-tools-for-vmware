@@ -1,0 +1,1445 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tools and sample code primarily intended for VMware Cloud on AWS.">
+      
+      
+        <link rel="canonical" href="https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/">
+      
+      
+        <meta name="author" content="AWS Labs">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Upgrade SQL Server Standalone Database Engine Instance - AWS Tools for VMware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#232F3E">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="squid-ink" data-md-color-accent="deep-orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#upgrade-sqlserverstandalonedatabaseengineinstanceps1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://awslabs.github.io/aws-tools-for-vmware/" title="AWS Tools for VMware" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">home</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              AWS Tools for VMware
+            </span>
+            <span class="md-header-nav__topic">
+              Upgrade SQL Server Standalone Database Engine Instance
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/awslabs/aws-tools-for-vmware/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    aws-tools-for-vmware
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="PowerShell" class="md-tabs__link md-tabs__link--active">
+          PowerShell
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://awslabs.github.io/aws-tools-for-vmware/" title="AWS Tools for VMware" class="md-nav__button md-logo">
+      
+        <i class="md-icon">home</i>
+      
+    </a>
+    AWS Tools for VMware
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/awslabs/aws-tools-for-vmware/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    aws-tools-for-vmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      PowerShell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        PowerShell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Upgrade SQL Server Standalone Database Engine Instance
+      </label>
+    
+    <a href="./" title="Upgrade SQL Server Standalone Database Engine Instance" class="md-nav__link md-nav__link--active">
+      Upgrade SQL Server Standalone Database Engine Instance
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#synopsis" title="SYNOPSIS" class="md-nav__link">
+    SYNOPSIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="SYNTAX" class="md-nav__link">
+    SYNTAX
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-default" title="Local (Default)" class="md-nav__link">
+    Local (Default)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-vm-by-name" title="Remote: VM by Name" class="md-nav__link">
+    Remote: VM by Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-vm-by-id" title="Remote: VM by ID" class="md-nav__link">
+    Remote: VM by ID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" title="DESCRIPTION" class="md-nav__link">
+    DESCRIPTION
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-tool-does" title="What this tool does" class="md-nav__link">
+    What this tool does
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-tool-does-not-do" title="What this tool does not do" class="md-nav__link">
+    What this tool does not do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" title="Security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-upgrades" title="Local upgrades" class="md-nav__link">
+    Local upgrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-upgrades" title="Remote upgrades" class="md-nav__link">
+    Remote upgrades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="EXAMPLES" class="md-nav__link">
+    EXAMPLES
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" title="EXAMPLE 1" class="md-nav__link">
+    EXAMPLE 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" title="EXAMPLE 2" class="md-nav__link">
+    EXAMPLE 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" title="EXAMPLE 3" class="md-nav__link">
+    EXAMPLE 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4" title="EXAMPLE 4" class="md-nav__link">
+    EXAMPLE 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5" title="EXAMPLE 5" class="md-nav__link">
+    EXAMPLE 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" title="EXAMPLE 6" class="md-nav__link">
+    EXAMPLE 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7" title="EXAMPLE 7" class="md-nav__link">
+    EXAMPLE 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" title="PARAMETERS" class="md-nav__link">
+    PARAMETERS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-filepath" title="-FilePath" class="md-nav__link">
+    -FilePath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-filehash" title="-FileHash" class="md-nav__link">
+    -FileHash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-algorithm" title="-Algorithm" class="md-nav__link">
+    -Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-instancename" title="-InstanceName" class="md-nav__link">
+    -InstanceName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-instancedirectory" title="-InstanceDirectory" class="md-nav__link">
+    -InstanceDirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-productkey" title="-ProductKey" class="md-nav__link">
+    -ProductKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-iacceptsqlserverlicenseterms" title="-IAcceptSqlServerLicenseTerms" class="md-nav__link">
+    -IAcceptSqlServerLicenseTerms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-credential" title="-Credential" class="md-nav__link">
+    -Credential
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vmid" title="-VmID" class="md-nav__link">
+    -VmID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vmname" title="-VmName" class="md-nav__link">
+    -VmName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-whatif" title="-WhatIf" class="md-nav__link">
+    -WhatIf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-confirm" title="-Confirm" class="md-nav__link">
+    -Confirm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commonparameters" title="CommonParameters" class="md-nav__link">
+    CommonParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" title="INPUTS" class="md-nav__link">
+    INPUTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemstring" title="System.String" class="md-nav__link">
+    System.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" title="OUTPUTS" class="md-nav__link">
+    OUTPUTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemstring_1" title="System.String" class="md-nav__link">
+    System.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" title="NOTES" class="md-nav__link">
+    NOTES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" title="RELATED LINKS" class="md-nav__link">
+    RELATED LINKS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#synopsis" title="SYNOPSIS" class="md-nav__link">
+    SYNOPSIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="SYNTAX" class="md-nav__link">
+    SYNTAX
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-default" title="Local (Default)" class="md-nav__link">
+    Local (Default)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-vm-by-name" title="Remote: VM by Name" class="md-nav__link">
+    Remote: VM by Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-vm-by-id" title="Remote: VM by ID" class="md-nav__link">
+    Remote: VM by ID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" title="DESCRIPTION" class="md-nav__link">
+    DESCRIPTION
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-tool-does" title="What this tool does" class="md-nav__link">
+    What this tool does
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-tool-does-not-do" title="What this tool does not do" class="md-nav__link">
+    What this tool does not do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" title="Security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-upgrades" title="Local upgrades" class="md-nav__link">
+    Local upgrades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-upgrades" title="Remote upgrades" class="md-nav__link">
+    Remote upgrades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="EXAMPLES" class="md-nav__link">
+    EXAMPLES
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" title="EXAMPLE 1" class="md-nav__link">
+    EXAMPLE 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" title="EXAMPLE 2" class="md-nav__link">
+    EXAMPLE 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" title="EXAMPLE 3" class="md-nav__link">
+    EXAMPLE 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4" title="EXAMPLE 4" class="md-nav__link">
+    EXAMPLE 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5" title="EXAMPLE 5" class="md-nav__link">
+    EXAMPLE 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" title="EXAMPLE 6" class="md-nav__link">
+    EXAMPLE 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7" title="EXAMPLE 7" class="md-nav__link">
+    EXAMPLE 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" title="PARAMETERS" class="md-nav__link">
+    PARAMETERS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-filepath" title="-FilePath" class="md-nav__link">
+    -FilePath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-filehash" title="-FileHash" class="md-nav__link">
+    -FileHash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-algorithm" title="-Algorithm" class="md-nav__link">
+    -Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-instancename" title="-InstanceName" class="md-nav__link">
+    -InstanceName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-instancedirectory" title="-InstanceDirectory" class="md-nav__link">
+    -InstanceDirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-productkey" title="-ProductKey" class="md-nav__link">
+    -ProductKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-iacceptsqlserverlicenseterms" title="-IAcceptSqlServerLicenseTerms" class="md-nav__link">
+    -IAcceptSqlServerLicenseTerms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-credential" title="-Credential" class="md-nav__link">
+    -Credential
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vmid" title="-VmID" class="md-nav__link">
+    -VmID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vmname" title="-VmName" class="md-nav__link">
+    -VmName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-whatif" title="-WhatIf" class="md-nav__link">
+    -WhatIf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-confirm" title="-Confirm" class="md-nav__link">
+    -Confirm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commonparameters" title="CommonParameters" class="md-nav__link">
+    CommonParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" title="INPUTS" class="md-nav__link">
+    INPUTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemstring" title="System.String" class="md-nav__link">
+    System.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" title="OUTPUTS" class="md-nav__link">
+    OUTPUTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemstring_1" title="System.String" class="md-nav__link">
+    System.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" title="NOTES" class="md-nav__link">
+    NOTES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" title="RELATED LINKS" class="md-nav__link">
+    RELATED LINKS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/docs/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="upgrade-sqlserverstandalonedatabaseengineinstanceps1">Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1<a class="headerlink" href="#upgrade-sqlserverstandalonedatabaseengineinstanceps1" title="Permanent link">&para;</a></h1>
+<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h2>
+<p>Upgrade a standalone SQL Server Database Engine instance in-place.</p>
+<h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<h3 id="local-default">Local (Default)<a class="headerlink" href="#local-default" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 [-FilePath] &lt;FileInfo&gt; [-FileHash] &lt;String&gt;
+ [[-Algorithm] &lt;String&gt;] [[-InstanceName] &lt;String&gt;] [[-InstanceDirectory] &lt;FileInfo&gt;] [[-ProductKey] &lt;String&gt;]
+ [-IAcceptSqlServerLicenseTerms] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+</pre></div>
+
+<h3 id="remote-vm-by-name">Remote: VM by Name<a class="headerlink" href="#remote-vm-by-name" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 [-FilePath] &lt;FileInfo&gt; [-FileHash] &lt;String&gt;
+ [[-Algorithm] &lt;String&gt;] [[-InstanceName] &lt;String&gt;] [[-InstanceDirectory] &lt;FileInfo&gt;] [[-ProductKey] &lt;String&gt;]
+ [-IAcceptSqlServerLicenseTerms] [-Credential] &lt;PSCredential&gt; -VmName &lt;String[]&gt; [-WhatIf] [-Confirm]
+ [&lt;CommonParameters&gt;]
+</pre></div>
+
+<h3 id="remote-vm-by-id">Remote: VM by ID<a class="headerlink" href="#remote-vm-by-id" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 [-FilePath] &lt;FileInfo&gt; [-FileHash] &lt;String&gt;
+ [[-Algorithm] &lt;String&gt;] [[-InstanceName] &lt;String&gt;] [[-InstanceDirectory] &lt;FileInfo&gt;] [[-ProductKey] &lt;String&gt;]
+ [-IAcceptSqlServerLicenseTerms] [-Credential] &lt;PSCredential&gt; [-VmID] &lt;String[]&gt; [-WhatIf] [-Confirm]
+ [&lt;CommonParameters&gt;]
+</pre></div>
+
+<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<h3 id="what-this-tool-does">What this tool does<a class="headerlink" href="#what-this-tool-does" title="Permanent link">&para;</a></h3>
+<p>This will perform an <em>impactful</em>, in-place, major version upgrade, such as
+SQL Server 2008 SP4 -> 2017 or 2008 R2 SP3 -> 2016, on a standalone
+SQL Server Database Engine instance on a Windows operating system.
+It can
+be run either locally, or remotely if deployed on a Windows VM in a vSphere
+environment such as VMware Cloud on AWS.
+You must supply your own
+SQL Server installation media and product key / license.</p>
+<p>The compatibility level of each database deployed on the target SQL Server
+instance will not be modified by this script, and <em>should</em> remain the same,
+but please test thoroughly.</p>
+<p>Please see the links below for additional resources such as Microsoft's
+best practices for planning your SQL Server instance upgrades, breaking
+changes and backwards compatibility, et cetera.</p>
+<p>Again, the upgrade process is impactful, so please test thoroughly and plan
+for application downtime.</p>
+<h3 id="what-this-tool-does-not-do">What this tool does not do<a class="headerlink" href="#what-this-tool-does-not-do" title="Permanent link">&para;</a></h3>
+<p>!!!
+danger "Backups are <em>NOT</em> included"
+    Backups are <em>NOT</em> included.
+Please make sure that you have implemented
+    and verified proper backups, and that you have a recovery plan
+    established that meets the recovery plan objective (RPO) and recovery
+    time objective (RTO).</p>
+<p>This tool does not accommodate the intricacies of upgrading any
+high availability (HA) SQL Server instance types including:</p>
+<ul>
+<li>Replicated Databases</li>
+<li>Mirrored Databases</li>
+<li>Log Shipping Instances</li>
+<li>Failover Cluster Instances (FCI)</li>
+<li>AlwaysOn Availability Groups (AAG)</li>
+</ul>
+<p>This tool does not accommodate edition upgrades within the same version of
+SQL Server either.</p>
+<p>The checks run prior to the upgrade cannot test for every eventuality.
+In
+fact, most of the requirements and compatibility testing is delegated to
+Microsoft's SQL Server installation media since it was built with a robust
+testing framework.
+Please test thoroughly.</p>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>To reduce the risk of unintended code execution, a file hash must be
+supplied for the setup file, which will be compared to a file hash of the
+specified setup file in an attempt to confirm file integrity and that the
+correct media has been loaded before launching the upgrade.
+Additionally,
+a few properties will be checked in an attempt to confirm that a
+SQL Server setup file has been specified.</p>
+<h3 id="local-upgrades">Local upgrades<a class="headerlink" href="#local-upgrades" title="Permanent link">&para;</a></h3>
+<p>For local upgrades, this script requires elevated privileges and must be
+run from PowerShell launched with the 'Run as Administrator' option.</p>
+<h3 id="remote-upgrades">Remote upgrades<a class="headerlink" href="#remote-upgrades" title="Permanent link">&para;</a></h3>
+<p>For VMware PowerCLI-based remote upgrades, HTTPS (443/tcp) connectivity is
+required to the ESXi hosts as well as vCenter for executing commands in the
+VM's guest operating system via the VMware Guest Operations API.
+This
+connectivity is not permitted by default, such as in VMware Cloud on AWS,
+but can be configured.</p>
+<p>This tool does not attempt to install or import the required PowerCLI
+modules, nor does it attempt to establish a PowerCLI session with vCenter.
+For VMware PowerCLI installation instructions, please see:
+<a href="https://www.powershellgallery.com/packages/VMware.PowerCLI/">https://www.powershellgallery.com/packages/VMware.PowerCLI/</a>.
+Once
+installed, run `Import-Module -Name 'VMware.VimAutomation.Core'` to import
+the subset of modules required.
+To learn more about how to establish a
+PowerCLI session, run `Get-Help -Name 'Connect-VIServer' -Detailed`, which
+includes a few examples.</p>
+<p>All target VMs must be powered on, and VMware Tools must be installed and
+running in the guest operating system of each Windows VM.</p>
+<p>The supplied credentials will be used on each VM to access the guest
+operating system, and must have administrative privileges.
+Because feature:
+<a href="https://powercli.ideas.aha.io/ideas/PCLI-I-101">https://powercli.ideas.aha.io/ideas/PCLI-I-101</a> has neither been accepted
+nor released by the PowerCLI team, Windows User Account Control (UAC) must
+be disabled in each guest operating system as well.</p>
+<p>Multiple VMs can be specified in the same command for batch upgrades via an
+array of VM IDs or names, as well as wildcard globbing of VM names;
+however, the SQL Server instance on each VM is upgraded iteratively, not
+concurrently.
+Please plan accordingly.</p>
+<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1">EXAMPLE 1<a class="headerlink" href="#example-1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;D:\setup.exe&#39; -FileHash $sha256FileHash -IAcceptSqlServerLicenseTerms -WhatIf
+</pre></div>
+
+<p>Performs a 'dry run test' of a local, in-place upgrade of the default
+SQL Server Database Engine instance (MSSQLSERVER) that would install in the
+default directory, and validates the integrity of the specified SQL Server
+setup file by comparing the SHA256 file hashes.</p>
+<p>Since a product key / license was not supplied, the instance would be
+upgraded into Evaluation mode unless upgraded to SQL Server Express
+edition.</p>
+<h3 id="example-2">EXAMPLE 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;D:\setup.exe&#39; -FileHash $sha256FileHash -IAcceptSqlServerLicenseTerms
+</pre></div>
+
+<p>Implements the previous example.</p>
+<p>Since a product key / license was not supplied, the instance will be
+upgraded into Evaluation mode unless upgraded to SQL Server Express
+edition.</p>
+<h3 id="example-3">EXAMPLE 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;E:\setup.exe&#39; -FileHash $md5FileHash -Algorithm &#39;MD5&#39; -InstanceName &#39;SQLEXPRESS&#39; -InstanceDirectory &#39;D:\MSSQL&#39; -ProductKey $productKey -IAcceptSqlServerLicenseTerms
+</pre></div>
+
+<p>Performs a local, in-place upgrade of the SQLEXPRESS SQL Server Database
+Engine instance that will install in the specified directory, validates the
+integrity of the specified SQL Server setup file by comparing the MD5 file
+hashes, and applies the specified product key.</p>
+<h3 id="example-4">EXAMPLE 4<a class="headerlink" href="#example-4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 &#39;E:\setup.exe&#39; $md5FileHash &#39;MD5&#39; &#39;SQLEXPRESS&#39; &#39;D:\MSSQL&#39; $productKey $true
+</pre></div>
+
+<p>The same in-place upgrade as in the example above using positional
+arguments.</p>
+<h3 id="example-5">EXAMPLE 5<a class="headerlink" href="#example-5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;O:\setup.exe&#39; -FileHash $md5FileHash -Algorithm &#39;MD5&#39; -IAcceptSqlServerLicenseTerms -Credential (Get-Credential) -VmName &#39;SQL1&#39;, &#39;MSSQL*&#39;
+</pre></div>
+
+<p>Performs a remote, PowerCLI-based in-place upgrade of the default
+SQL Server Database Engine instance (MSSQLSERVER) on the SQL1 VM, as well
+as any VM with a name starting 'MSSQL' (due to the '*' wildcard).
+It will
+install in the default directory, and validates the integrity of the
+specified SQL Server setup file by comparing the MD5 file hashes.</p>
+<h3 id="example-6">EXAMPLE 6<a class="headerlink" href="#example-6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;D:\setup.exe&#39; -FileHash $sha512FileHash -Algorithm &#39;SHA512&#39; -IAcceptSqlServerLicenseTerms -Credential (Get-Credential) -VmID &#39;VirtualMachine-vm-42&#39;
+</pre></div>
+
+<p>Performs a remote, PowerCLI-based in-place upgrade of the default
+SQL Server Database Engine instance (MSSQLSERVER) on the VM with MoRef ID
+'VirtualMachine-vm-42'.
+It will install in the default directory, and
+validates the integrity of the specified SQL Server setup file by comparing
+the SHA512 file hashes.</p>
+<h3 id="example-7">EXAMPLE 7<a class="headerlink" href="#example-7" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>( Get-VM -Name &#39;*SQL*&#39; ).ID | ./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath &#39;D:\setup.exe&#39; -FileHash $sha256FileHash -IAcceptSqlServerLicenseTerms -Credential (Get-Credential)
+</pre></div>
+
+<p>Performs a remote, PowerCLI-based in-place upgrade of the default
+SQL Server Database Engine instance (MSSQLSERVER) on all VMs with 'SQL' in
+the name.
+It will install in the default directory, and validates the
+integrity of the specified SQL Server setup file by comparing the SHA256
+file hashes.</p>
+<h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h3 id="-filepath">-FilePath<a class="headerlink" href="#-filepath" title="Permanent link">&para;</a></h3>
+<p>Specifies the path to the SQL Server installation media.</p>
+<p>Example: D:\setup.exe</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.IO.FileInfo</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-filehash">-FileHash<a class="headerlink" href="#-filehash" title="Permanent link">&para;</a></h3>
+<p>Specifies the expected SQL Server setup file hash.
+This can be obtained via
+the `Get-FileHash` cmdlet, the `certutil.exe -HashFile` command, or similar
+tools.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-algorithm">-Algorithm<a class="headerlink" href="#-algorithm" title="Permanent link">&para;</a></h3>
+<p>Specifies the setup file hash algorithm.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SHA256</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-instancename">-InstanceName<a class="headerlink" href="#-instancename" title="Permanent link">&para;</a></h3>
+<p>Specifies the target SQL Server instance name.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MSSQLSERVER</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-instancedirectory">-InstanceDirectory<a class="headerlink" href="#-instancedirectory" title="Permanent link">&para;</a></h3>
+<p>Specifies a non-default installation directory for shared components.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.IO.FileInfo</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-productkey">-ProductKey<a class="headerlink" href="#-productkey" title="Permanent link">&para;</a></h3>
+<p>Specifies the product key for the edition of SQL Server.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-iacceptsqlserverlicenseterms">-IAcceptSqlServerLicenseTerms<a class="headerlink" href="#-iacceptsqlserverlicenseterms" title="Permanent link">&para;</a></h3>
+<p>Required to acknowledge acceptance of Microsoft's license terms for
+SQL Server.</p>
+<p>Reference: <a href="https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Upgrade">https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt#Upgrade</a></p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.Management.Automation.SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-credential">-Credential<a class="headerlink" href="#-credential" title="Permanent link">&para;</a></h3>
+<p>Specifies the Windows guest operating system credentials with
+administrative rights.
+Used for updating the SQL Server instance.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.Management.Automation.PSCredential</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="nt">Remote</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">VM by Name, Remote</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VM by ID</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-vmid">-VmID<a class="headerlink" href="#-vmid" title="Permanent link">&para;</a></h3>
+<p>Specifies the vSphere managed object reference identifier (MoRef ID) of
+one or more target VMs.</p>
+<p>Example: VirtualMachine-vm-431</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String[]</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="nt">Remote</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">VM by ID</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ID</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName, ByValue)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-vmname">-VmName<a class="headerlink" href="#-vmname" title="Permanent link">&para;</a></h3>
+<p>The name of one or more target VMs.
+Accepts wildcard characters.</p>
+<p>Example: SQL1, MSSQL*</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String[]</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="nt">Remote</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">VM by Name</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Name</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True (ByPropertyName)</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+
+<h3 id="-whatif">-WhatIf<a class="headerlink" href="#-whatif" title="Permanent link">&para;</a></h3>
+<p>Shows what would happen if the cmdlet runs.
+The cmdlet is not run.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.Management.Automation.SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wi</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="-confirm">-Confirm<a class="headerlink" href="#-confirm" title="Permanent link">&para;</a></h3>
+<p>Prompts you for confirmation before running the cmdlet.</p>
+<div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.Management.Automation.SwitchParameter</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cf</span>
+
+<span class="nt">Required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+
+<h3 id="commonparameters">CommonParameters<a class="headerlink" href="#commonparameters" title="Permanent link">&para;</a></h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (<a href="http://go.microsoft.com/fwlink/?LinkID=113216">http://go.microsoft.com/fwlink/?LinkID=113216</a>).</p>
+<h2 id="inputs">INPUTS<a class="headerlink" href="#inputs" title="Permanent link">&para;</a></h2>
+<h3 id="systemstring">System.String<a class="headerlink" href="#systemstring" title="Permanent link">&para;</a></h3>
+<h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
+<h3 id="systemstring_1">System.String<a class="headerlink" href="#systemstring_1" title="Permanent link">&para;</a></h3>
+<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>Version: 0.1.0</p>
+<h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<p><a href="https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/">https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/</a></p>
+<p><a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1">https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1</a></p>
+<p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades">https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades</a></p>
+<p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine">https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine</a></p>
+<p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/plan-and-test-the-database-engine-upgrade-plan">https://docs.microsoft.com/sql/database-engine/install-windows/plan-and-test-the-database-engine-upgrade-plan</a></p>
+<p><a href="https://docs.microsoft.com/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server">https://docs.microsoft.com/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server</a></p>
+<p><a href="https://docs.microsoft.com/sql/database-engine/sql-server-database-engine-backward-compatibility">https://docs.microsoft.com/sql/database-engine/sql-server-database-engine-backward-compatibility</a></p>
+<p><a href="https://github.com/awslabs/aws-tools-for-vmware/issues/new">https://github.com/awslabs/aws-tools-for-vmware/issues/new</a></p>
+<p><a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">https://console.aws.amazon.com/support/home#/case/create?issueType=technical</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://aws.amazon.com/vmware/" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/awslabs/aws-tools-for-vmware" class="md-footer-social__link fa fa-github-alt"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

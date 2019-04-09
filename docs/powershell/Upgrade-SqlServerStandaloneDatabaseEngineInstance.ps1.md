@@ -60,10 +60,8 @@ for application downtime.
 
 ### What this tool does not do
 
-!!!
-danger "Backups are *NOT* included"
-    Backups are *NOT* included.
-Please make sure that you have implemented
+!!! danger "Backups are *NOT* included"
+    Backups are *NOT* included. Please make sure that you have implemented
     and verified proper backups, and that you have a recovery plan
     established that meets the recovery plan objective (RPO) and recovery
     time objective (RTO).

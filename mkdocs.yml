@@ -35,7 +35,6 @@ theme:
     primary: 'squid-ink'
     accent: 'deep-orange'
   font: false
-  favicon: 'img/favicon.ico'
   logo:
     icon:
       'home'

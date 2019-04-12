@@ -80,3 +80,6 @@ nav:
   - Home: 'index.md'
   - PowerShell:
     - Upgrade SQL Server Standalone Database Engine Instance: 'powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1.md'
+  - About:
+    - Contributing Guidelines: 'about/contributing.md'
+    - License: 'about/license.md'

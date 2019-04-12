@@ -1,0 +1,1 @@
+C:/Users/trlindsa/git/aws-tools-for-vmware/LICENSE

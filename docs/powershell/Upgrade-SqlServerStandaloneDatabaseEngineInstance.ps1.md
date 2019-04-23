@@ -102,10 +102,10 @@ modules, nor does it attempt to establish a PowerCLI session with vCenter.
 For VMware PowerCLI installation instructions, please see:
 https://www.powershellgallery.com/packages/VMware.PowerCLI/.
 Once
-installed, run \`Import-Module -Name 'VMware.VimAutomation.Core'\` to import
+installed, run `Import-Module -Name 'VMware.VimAutomation.Core'` to import
 the subset of modules required.
 To learn more about how to establish a
-PowerCLI session, run \`Get-Help -Name 'Connect-VIServer' -Detailed\`, which
+PowerCLI session, run `Get-Help -Name 'Connect-VIServer' -Detailed`, which
 includes a few examples.
 
 All target VMs must be powered on, and VMware Tools must be installed and
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ### -FileHash
 Specifies the expected SQL Server setup file hash.
 This can be obtained via
-the \`Get-FileHash\` cmdlet, the \`certutil.exe -HashFile\` command, or similar
+the `Get-FileHash` cmdlet, the `certutil.exe -HashFile` command, or similar
 tools.
 
 ```yaml

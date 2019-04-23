@@ -3,7 +3,7 @@
 # Project information
 site_name: 'AWS Tools for VMware'
 site_description: 'Tools and sample code primarily intended for VMware Cloud on AWS.'
-site_author: 'AWS Labs'
+site_author: 'Amazon Web Services, Inc.'
 site_url: 'https://awslabs.github.io/aws-tools-for-vmware/'
 
 # Repository

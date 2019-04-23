@@ -7,6 +7,9 @@ schema: 2.0.0
 
 # Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1
 
+[![Current Version](https://img.shields.io/powershellgallery/v/Upgrade-SqlServerStandaloneDatabaseEngineInstance.svg)](https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance)
+[![Total Downloads](https://img.shields.io/powershellgallery/dt/Upgrade-SqlServerStandaloneDatabaseEngineInstance.svg)](https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance)
+
 ## SYNOPSIS
 Upgrade a standalone SQL Server Database Engine instance in-place.
 

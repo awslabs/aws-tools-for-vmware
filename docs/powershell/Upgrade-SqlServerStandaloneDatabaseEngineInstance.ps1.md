@@ -85,15 +85,6 @@ Microsoft's SQL Server installation media since it was built with a robust
 testing framework.
 Please test thoroughly.
 
-### Security
-To reduce the risk of unintended code execution, a file hash must be
-supplied for the setup file, which will be compared to a file hash of the
-specified setup file in an attempt to confirm file integrity and that the
-correct media has been loaded before launching the upgrade.
-Additionally,
-a few properties will be checked in an attempt to confirm that a
-SQL Server setup file has been specified.
-
 ### Local upgrades
 For local upgrades, this script requires elevated privileges and must be
 run from PowerShell launched with the 'Run as Administrator' option.
@@ -423,7 +414,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 ## NOTES
-Version: 0.1.0
+### Security
+To reduce the risk of unintended code execution, a file hash must be
+supplied for the setup file, which will be compared to a file hash of the
+specified setup file in an attempt to confirm file integrity and that the
+correct media has been loaded before launching the upgrade.
+Additionally,
+a few properties will be checked in an attempt to confirm that a
+SQL Server setup file has been specified.
 
 ## RELATED LINKS
 

@@ -2,6 +2,38 @@
 # Copyright 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
 # =======================================================================================
 
+<#PSScriptInfo
+    .VERSION 0.1.0
+
+    .GUID 8f4b7f93-a23d-442a-b9a4-c8014bf5f927
+
+    .AUTHOR Amazon Web Services, Inc.
+
+    .COMPANYNAME Amazon Web Services, Inc.
+
+    .COPYRIGHT Copyright 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+
+    .TAGS AWS SqlServer SQL Server MSSQL upgrade compatibility VMware PowerCLI VM VirtualMachine PSEdition_Core PSEdition_Desktop Windows Linux Mac macOS
+
+    .LICENSEURI https://github.com/awslabs/aws-tools-for-vmware/blob/master/LICENSE
+
+    .PROJECTURI https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1
+
+    .ICONURI
+
+    .EXTERNALMODULEDEPENDENCIES 
+
+    .REQUIREDSCRIPTS
+
+    .EXTERNALSCRIPTDEPENDENCIES
+
+    .RELEASENOTES
+    ### 0.1.0
+    First version published to PowerShellGallery.
+
+    .PRIVATEDATA
+#>
+
 <#
     .SYNOPSIS
     Upgrade a standalone SQL Server Database Engine instance in-place.
@@ -52,14 +84,6 @@
     Microsoft's SQL Server installation media since it was built with a robust
     testing framework. Please test thoroughly.
 
-    ### Security
-    To reduce the risk of unintended code execution, a file hash must be
-    supplied for the setup file, which will be compared to a file hash of the
-    specified setup file in an attempt to confirm file integrity and that the
-    correct media has been loaded before launching the upgrade. Additionally,
-    a few properties will be checked in an attempt to confirm that a
-    SQL Server setup file has been specified.
-
     ### Local upgrades
     For local upgrades, this script requires elevated privileges and must be
     run from PowerShell launched with the 'Run as Administrator' option.
@@ -98,7 +122,13 @@
     System.String
 
     .NOTES
-    Version: 0.1.0
+    ### Security
+    To reduce the risk of unintended code execution, a file hash must be
+    supplied for the setup file, which will be compared to a file hash of the
+    specified setup file in an attempt to confirm file integrity and that the
+    correct media has been loaded before launching the upgrade. Additionally,
+    a few properties will be checked in an attempt to confirm that a
+    SQL Server setup file has been specified.
 
     .EXAMPLE
     ./Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1 -FilePath 'D:\setup.exe' -FileHash $sha256FileHash -IAcceptSqlServerLicenseTerms -WhatIf

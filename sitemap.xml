@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://awslabs.github.io/aws-tools-for-vmware/</loc>
-     <lastmod>2019-04-12</lastmod>
+     <lastmod>2019-04-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/</loc>
-     <lastmod>2019-04-12</lastmod>
+     <lastmod>2019-04-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://awslabs.github.io/aws-tools-for-vmware/about/contributing/</loc>
-     <lastmod>2019-04-12</lastmod>
+     <lastmod>2019-04-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://awslabs.github.io/aws-tools-for-vmware/about/license/</loc>
-     <lastmod>2019-04-12</lastmod>
+     <lastmod>2019-04-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

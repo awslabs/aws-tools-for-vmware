@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/">
       
       
-        <meta name="author" content="AWS Labs">
+        <meta name="author" content="Amazon Web Services, Inc.">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -53,7 +53,7 @@
       
         
         
-        <meta name="theme-color" content="#232F3E">
+        <meta name="theme-color" content="#232f3e">
       
     
     
@@ -410,13 +410,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#security" title="Security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#local-upgrades" title="Local upgrades" class="md-nav__link">
     Local upgrades
   </a>
@@ -645,6 +638,19 @@
   <a href="#notes" title="NOTES" class="md-nav__link">
     NOTES
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" title="Security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -803,13 +809,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#security" title="Security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#local-upgrades" title="Local upgrades" class="md-nav__link">
     Local upgrades
   </a>
@@ -1039,6 +1038,19 @@
     NOTES
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" title="Security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1068,6 +1080,8 @@
                 
                 
                 <h1 id="upgrade-sqlserverstandalonedatabaseengineinstanceps1">Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1<a class="headerlink" href="#upgrade-sqlserverstandalonedatabaseengineinstanceps1" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance"><img alt="Current Version" src="https://img.shields.io/powershellgallery/v/Upgrade-SqlServerStandaloneDatabaseEngineInstance.svg" /></a>
+<a href="https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance"><img alt="Total Downloads" src="https://img.shields.io/powershellgallery/dt/Upgrade-SqlServerStandaloneDatabaseEngineInstance.svg" /></a></p>
 <h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h2>
 <p>Upgrade a standalone SQL Server Database Engine instance in-place.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
@@ -1134,14 +1148,6 @@ fact, most of the requirements and compatibility testing is delegated to
 Microsoft's SQL Server installation media since it was built with a robust
 testing framework.
 Please test thoroughly.</p>
-<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
-<p>To reduce the risk of unintended code execution, a file hash must be
-supplied for the setup file, which will be compared to a file hash of the
-specified setup file in an attempt to confirm file integrity and that the
-correct media has been loaded before launching the upgrade.
-Additionally,
-a few properties will be checked in an attempt to confirm that a
-SQL Server setup file has been specified.</p>
 <h3 id="local-upgrades">Local upgrades<a class="headerlink" href="#local-upgrades" title="Permanent link">&para;</a></h3>
 <p>For local upgrades, this script requires elevated privileges and must be
 run from PowerShell launched with the 'Run as Administrator' option.</p>
@@ -1157,10 +1163,10 @@ modules, nor does it attempt to establish a PowerCLI session with vCenter.
 For VMware PowerCLI installation instructions, please see:
 <a href="https://www.powershellgallery.com/packages/VMware.PowerCLI/">https://www.powershellgallery.com/packages/VMware.PowerCLI/</a>.
 Once
-installed, run `Import-Module -Name 'VMware.VimAutomation.Core'` to import
+installed, run <code>Import-Module -Name 'VMware.VimAutomation.Core'</code> to import
 the subset of modules required.
 To learn more about how to establish a
-PowerCLI session, run `Get-Help -Name 'Connect-VIServer' -Detailed`, which
+PowerCLI session, run <code>Get-Help -Name 'Connect-VIServer' -Detailed</code>, which
 includes a few examples.</p>
 <p>All target VMs must be powered on, and VMware Tools must be installed and
 running in the guest operating system of each Windows VM.</p>
@@ -1257,7 +1263,7 @@ file hashes.</p>
 <h3 id="-filehash">-FileHash<a class="headerlink" href="#-filehash" title="Permanent link">&para;</a></h3>
 <p>Specifies the expected SQL Server setup file hash.
 This can be obtained via
-the `Get-FileHash` cmdlet, the `certutil.exe -HashFile` command, or similar
+the <code>Get-FileHash</code> cmdlet, the <code>certutil.exe -HashFile</code> command, or similar
 tools.</p>
 <div class="codehilite"><pre><span></span><span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">System.String</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(All)</span>
@@ -1416,10 +1422,18 @@ The cmdlet is not run.</p>
 <h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
 <h3 id="systemstring_1">System.String<a class="headerlink" href="#systemstring_1" title="Permanent link">&para;</a></h3>
 <h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<p>Version: 0.1.0</p>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>To reduce the risk of unintended code execution, a file hash must be
+supplied for the setup file, which will be compared to a file hash of the
+specified setup file in an attempt to confirm file integrity and that the
+correct media has been loaded before launching the upgrade.
+Additionally,
+a few properties will be checked in an attempt to confirm that a
+SQL Server setup file has been specified.</p>
 <h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
 <p><a href="https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/">https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/</a></p>
 <p><a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1">https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1</a></p>
+<p><a href="https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance/">https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance/</a></p>
 <p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades">https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades</a></p>
 <p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine">https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine</a></p>
 <p><a href="https://docs.microsoft.com/sql/database-engine/install-windows/plan-and-test-the-database-engine-upgrade-plan">https://docs.microsoft.com/sql/database-engine/install-windows/plan-and-test-the-database-engine-upgrade-plan</a></p>
@@ -1509,7 +1523,7 @@ The cmdlet is not run.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

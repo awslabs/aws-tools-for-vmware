@@ -192,6 +192,9 @@
     https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1
 
     .LINK
+    https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance/
+
+    .LINK
     https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades
 
     .LINK

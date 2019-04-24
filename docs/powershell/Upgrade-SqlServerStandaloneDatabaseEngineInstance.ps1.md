@@ -432,6 +432,8 @@ SQL Server setup file has been specified.
 
 [https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1](https://github.com/awslabs/aws-tools-for-vmware/blob/master/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1)
 
+[https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance/](https://www.powershellgallery.com/packages/Upgrade-SqlServerStandaloneDatabaseEngineInstance/)
+
 [https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades](https://docs.microsoft.com/sql/database-engine/install-windows/supported-version-and-edition-upgrades)
 
 [https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine](https://docs.microsoft.com/sql/database-engine/install-windows/upgrade-database-engine)

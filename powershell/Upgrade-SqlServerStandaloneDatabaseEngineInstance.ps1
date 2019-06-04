@@ -3,7 +3,7 @@
 # =======================================================================================
 
 <#PSScriptInfo
-    .VERSION 0.1.0
+    .VERSION 0.1.1
 
     .GUID 8f4b7f93-a23d-442a-b9a4-c8014bf5f927
 
@@ -28,6 +28,9 @@
     .EXTERNALSCRIPTDEPENDENCIES
 
     .RELEASENOTES
+    ### 0.1.1
+    Added blog post link.
+
     ### 0.1.0
     First version published to PowerShellGallery.
 
@@ -214,6 +217,9 @@
 
     .LINK
     https://console.aws.amazon.com/support/home#/case/create?issueType=technical
+
+    .LINK
+    https://aws.amazon.com/blogs/database/upgrade-your-end-of-support-sql-server-instances-in-vmware-cloud-on-aws-with-ease/
 #>
 
 [CmdletBinding( DefaultParameterSetName = 'Local', SupportsShouldProcess = $true, ConfirmImpact = 'High' )]

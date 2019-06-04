@@ -448,3 +448,5 @@ SQL Server setup file has been specified.
 
 [https://console.aws.amazon.com/support/home#/case/create?issueType=technical](https://console.aws.amazon.com/support/home#/case/create?issueType=technical)
 
+[https://aws.amazon.com/blogs/database/upgrade-your-end-of-support-sql-server-instances-in-vmware-cloud-on-aws-with-ease/](https://aws.amazon.com/blogs/database/upgrade-your-end-of-support-sql-server-instances-in-vmware-cloud-on-aws-with-ease/)
+

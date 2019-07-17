@@ -47,6 +47,10 @@ extra:
       link: 'https://aws.amazon.com/vmware/'
     - type: 'github-alt'
       link: 'https://github.com/awslabs/aws-tools-for-vmware'
+    - type: 'twitter'
+      link: 'https://twitter.com/AWSOpen'
+    - type: 'reddit-alien'
+      link: 'https://www.reddit.com/r/aws/'
 
 # Extensions
 markdown_extensions:

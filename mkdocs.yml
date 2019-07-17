@@ -31,7 +31,7 @@ theme:
   # Theme
   language: 'en'
   feature:
-    tabs: true
+    tabs: false
   palette:
     primary: 'smile'
     accent: 'dark-orange'

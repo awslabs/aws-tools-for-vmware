@@ -1,0 +1,5 @@
+vsphere_server = "vcenter.sddc-0-0-0-0.vmwarevmc.com"
+
+num_shell_vms = 1
+
+network = "sddc-cgw-network-1"

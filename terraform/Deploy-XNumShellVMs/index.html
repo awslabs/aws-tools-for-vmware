@@ -13,7 +13,7 @@
         <meta name="description" content="Tools and sample code primarily intended for VMware Cloud on AWS.">
       
       
-        <link rel="canonical" href="https://awslabs.github.io/aws-tools-for-vmware/about/contributing/">
+        <link rel="canonical" href="https://awslabs.github.io/aws-tools-for-vmware/terraform/Deploy-XNumShellVMs/">
       
       
         <meta name="author" content="Amazon Web Services, Inc.">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Contributing Guidelines - AWS Tools for VMware</title>
+        <title>Deploy x number of shell VMs in VMware Cloud on AWS - AWS Tools for VMware</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#contributing-guidelines" tabindex="1" class="md-skip">
+      <a href="#deploy-x-number-of-shell-vms-in-vmware-cloud-on-aws" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Contributing Guidelines
+                Deploy x number of shell VMs in VMware Cloud on AWS
               
             </span>
           
@@ -266,10 +266,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Terraform
@@ -277,44 +279,6 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         Terraform
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../terraform/Deploy-XNumShellVMs/" title="Deploy x number of shell VMs in VMware Cloud on AWS" class="md-nav__link">
-      Deploy x number of shell VMs in VMware Cloud on AWS
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      About
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -334,11 +298,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Contributing Guidelines
+        Deploy x number of shell VMs in VMware Cloud on AWS
       </label>
     
-    <a href="./" title="Contributing Guidelines" class="md-nav__link md-nav__link--active">
-      Contributing Guidelines
+    <a href="./" title="Deploy x number of shell VMs in VMware Cloud on AWS" class="md-nav__link md-nav__link--active">
+      Deploy x number of shell VMs in VMware Cloud on AWS
     </a>
     
       
@@ -352,43 +316,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reporting-bugsfeature-requests" title="Reporting Bugs/Feature Requests" class="md-nav__link">
-    Reporting Bugs/Feature Requests
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy" title="Destroy" class="md-nav__link">
+    Destroy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing-via-pull-requests" title="Contributing via Pull Requests" class="md-nav__link">
-    Contributing via Pull Requests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-contributions-to-work-on" title="Finding contributions to work on" class="md-nav__link">
-    Finding contributions to work on
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-of-conduct" title="Code of Conduct" class="md-nav__link">
-    Code of Conduct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-issue-notifications" title="Security issue notifications" class="md-nav__link">
-    Security issue notifications
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licensing" title="Licensing" class="md-nav__link">
-    Licensing
+  <a href="#additional-resources" title="Additional Resources" class="md-nav__link">
+    Additional Resources
   </a>
   
 </li>
@@ -404,13 +367,49 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../license/" title="License" class="md-nav__link">
+    <a href="../../about/contributing/" title="Contributing Guidelines" class="md-nav__link">
+      Contributing Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
       License
     </a>
   </li>
@@ -442,43 +441,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reporting-bugsfeature-requests" title="Reporting Bugs/Feature Requests" class="md-nav__link">
-    Reporting Bugs/Feature Requests
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy" title="Destroy" class="md-nav__link">
+    Destroy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing-via-pull-requests" title="Contributing via Pull Requests" class="md-nav__link">
-    Contributing via Pull Requests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-contributions-to-work-on" title="Finding contributions to work on" class="md-nav__link">
-    Finding contributions to work on
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-of-conduct" title="Code of Conduct" class="md-nav__link">
-    Code of Conduct
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-issue-notifications" title="Security issue notifications" class="md-nav__link">
-    Security issue notifications
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licensing" title="Licensing" class="md-nav__link">
-    Licensing
+  <a href="#additional-resources" title="Additional Resources" class="md-nav__link">
+    Additional Resources
   </a>
   
 </li>
@@ -499,53 +497,35 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/docs/about/contributing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/docs/terraform/Deploy-XNumShellVMs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="contributing-guidelines">Contributing Guidelines<a class="headerlink" href="#contributing-guidelines" title="Permanent link">&para;</a></h1>
-<p>Thank you for your interest in contributing to our project. Whether it's a bug report, new feature, correction, or additional
-documentation, we greatly value feedback and contributions from our community.</p>
-<p>Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
-information to effectively respond to your bug report or contribution.</p>
-<h2 id="reporting-bugsfeature-requests">Reporting Bugs/Feature Requests<a class="headerlink" href="#reporting-bugsfeature-requests" title="Permanent link">&para;</a></h2>
-<p>We welcome you to use the GitHub issue tracker to report bugs or suggest features.</p>
-<p>When filing an issue, please check <a href="https://github.com/awslabs/aws-tools-for-vmware/issues">existing open</a>, or <a href="https://github.com/awslabs/aws-tools-for-vmware/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aclosed%20">recently closed</a>, issues to make sure somebody else hasn't already
-reported the issue. Please try to include as much information as you can. Details like these are incredibly useful:</p>
+                <h1 id="deploy-x-number-of-shell-vms-in-vmware-cloud-on-aws">Deploy x number of shell VMs in VMware Cloud on AWS<a class="headerlink" href="#deploy-x-number-of-shell-vms-in-vmware-cloud-on-aws" title="Permanent link">&para;</a></h1>
+<p>This example shows how to programmatically deploy a set amount of "shell" VMs (no operating system installed) in a VMware Cloud on AWS Software-defined Data Center (SDDC) via <a href="https://www.terraform.io">HashiCorp Terraform</a>. The original use case for this template was simple scalability testing, but it could also be used as a starter infrastructure as code template for your SDDC.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://www.terraform.io/downloads.html">HashiCorp Terraform</a></li>
+<li><a href="https://vmc.vmware.com/console/sddcs">VMware Cloud on AWS console</a></li>
+</ol>
+<h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>cp ./terraform.tfvars.example ./terraform.tfvars</code></li>
+<li>Update values in ./terraform.tfvars as appropriate</li>
+<li><a href="https://www.terraform.io/docs/commands/init.html"><code>terraform init</code></a></li>
+<li><a href="https://www.terraform.io/docs/commands/plan.html"><code>terraform plan</code></a></li>
+<li><a href="https://www.terraform.io/docs/commands/apply.html"><code>terraform apply</code></a></li>
+</ol>
+<h3 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h3>
 <ul>
-<li>A reproducible test case or series of steps</li>
-<li>The version of our code being used</li>
-<li>Any modifications you've made relevant to the bug</li>
-<li>Anything unusual about your environment or deployment</li>
+<li><code>terraform destroy</code></li>
 </ul>
-<h2 id="contributing-via-pull-requests">Contributing via Pull Requests<a class="headerlink" href="#contributing-via-pull-requests" title="Permanent link">&para;</a></h2>
-<p>Contributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:</p>
-<ol>
-<li>You are working against the latest source on the <em>master</em> branch.</li>
-<li>You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.</li>
-<li>You open an issue to discuss any significant work - we would hate for your time to be wasted.</li>
-</ol>
-<p>To send us a pull request, please:</p>
-<ol>
-<li>Fork the repository.</li>
-<li>Modify the source; please focus on the specific change you are contributing. If you also reformat all the code, it will be hard for us to focus on your change.</li>
-<li>Ensure local tests pass.</li>
-<li>Commit to your fork using clear commit messages.</li>
-<li>Send us a pull request, answering any default questions in the pull request interface.</li>
-<li>Pay attention to any automated CI failures reported in the pull request, and stay involved in the conversation.</li>
-</ol>
-<p>GitHub provides additional document on <a href="https://help.github.com/articles/fork-a-repo/">forking a repository</a> and
-<a href="https://help.github.com/articles/creating-a-pull-request/">creating a pull request</a>.</p>
-<h2 id="finding-contributions-to-work-on">Finding contributions to work on<a class="headerlink" href="#finding-contributions-to-work-on" title="Permanent link">&para;</a></h2>
-<p>Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any <a href="https://github.com/awslabs/aws-tools-for-vmware/labels/help%20wanted">'help wanted'</a> issues is a great place to start.</p>
-<h2 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h2>
-<p>This project has adopted the <a href="https://aws.github.io/code-of-conduct">Amazon Open Source Code of Conduct</a>.
-For more information see the <a href="https://aws.github.io/code-of-conduct-faq">Code of Conduct FAQ</a> or contact
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#112;&#101;&#110;&#115;&#111;&#117;&#114;&#99;&#101;&#45;&#99;&#111;&#100;&#101;&#111;&#102;&#99;&#111;&#110;&#100;&#117;&#99;&#116;&#64;&#97;&#109;&#97;&#122;&#111;&#110;&#46;&#99;&#111;&#109;">&#111;&#112;&#101;&#110;&#115;&#111;&#117;&#114;&#99;&#101;&#45;&#99;&#111;&#100;&#101;&#111;&#102;&#99;&#111;&#110;&#100;&#117;&#99;&#116;&#64;&#97;&#109;&#97;&#122;&#111;&#110;&#46;&#99;&#111;&#109;</a> with any additional questions or comments.</p>
-<h2 id="security-issue-notifications">Security issue notifications<a class="headerlink" href="#security-issue-notifications" title="Permanent link">&para;</a></h2>
-<p>If you discover a potential security issue in this project we ask that you notify AWS/Amazon Security via our <a href="http://aws.amazon.com/security/vulnerability-reporting/">vulnerability reporting page</a>. Please do <strong>not</strong> create a public github issue.</p>
-<h2 id="licensing">Licensing<a class="headerlink" href="#licensing" title="Permanent link">&para;</a></h2>
-<p>See the <a href="https://github.com/awslabs/aws-tools-for-vmware/blob/master/LICENSE">LICENSE</a> file for our project's licensing. We will ask you to confirm the licensing of your contribution.</p>
-<p>We may ask you to sign a <a href="http://en.wikipedia.org/wiki/Contributor_License_Agreement">Contributor License Agreement (CLA)</a> for larger changes.</p>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://learn.hashicorp.com/terraform/getting-started/install.html">Getting started with HashiCorp Terraform</a></li>
+<li><a href="https://github.com/hashicorp/terraform">HashiCorp Terraform source code</a></li>
+<li><a href="https://docs.vmware.com/en/VMware-Cloud-on-AWS/index.html">VMware Cloud on AWS documentation</a></li>
+</ul>
                 
                   
                 
@@ -566,7 +546,7 @@ For more information see the <a href="https://aws.github.io/code-of-conduct-faq"
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../terraform/Deploy-XNumShellVMs/" title="Deploy x number of shell VMs in VMware Cloud on AWS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/" title="Upgrade SQL Server Standalone Database Engine Instance" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -575,19 +555,19 @@ For more information see the <a href="https://aws.github.io/code-of-conduct-faq"
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Deploy x number of shell VMs in VMware Cloud on AWS
+                Upgrade SQL Server Standalone Database Engine Instance
               </span>
             </div>
           </a>
         
         
-          <a href="../license/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../about/contributing/" title="Contributing Guidelines" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                License
+                Contributing Guidelines
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -19,7 +19,7 @@ This example shows how to programmatically deploy a set amount of "shell" VMs (n
 
 ### Destroy
 
-* `terraform destroy`
+* [`terraform destroy`](https://www.terraform.io/docs/commands/destroy.html)
 
 ## Additional Resources
 

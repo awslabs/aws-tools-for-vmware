@@ -15,9 +15,13 @@ indent_style = space
 indent_size = 4
 
 [docs/**.md]
+end_of_line = lf
 indent_style = space
 indent_size = 4
 
 [LICENSE]
 indent_style = space
 indent_size = 3
+
+[{**.sh,**.tf*}]
+end_of_line = lf

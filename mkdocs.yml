@@ -10,7 +10,7 @@ site_url: 'https://awslabs.github.io/aws-tools-for-vmware/'
 repo_name: 'aws-tools-for-vmware'
 repo_url: 'https://github.com/awslabs/aws-tools-for-vmware'
 remote_branch: 'gh-pages'
-edit_uri: 'blob/master/docs/'
+edit_uri: 'blob/main/docs/'
 
 # Copyright
 copyright: 'Copyright 2019-2020, Amazon Web Services, Inc. or its affiliates. All rights reserved.'

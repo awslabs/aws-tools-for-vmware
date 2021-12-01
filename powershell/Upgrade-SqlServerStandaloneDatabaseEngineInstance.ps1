@@ -1,5 +1,5 @@
 # AWS Upgrade Utility for SQL Server
-# Copyright 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+# Copyright 2019 - 2021, Amazon Web Services, Inc. or its affiliates. All rights reserved.
 # =======================================================================================
 
 <#PSScriptInfo
@@ -11,7 +11,7 @@
 
     .COMPANYNAME Amazon Web Services, Inc.
 
-    .COPYRIGHT Copyright 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+    .COPYRIGHT Copyright 2019 - 2021, Amazon Web Services, Inc. or its affiliates. All rights reserved.
 
     .TAGS AWS SqlServer SQL Server MSSQL upgrade compatibility VMware PowerCLI VM VirtualMachine PSEdition_Core PSEdition_Desktop Windows Linux Mac macOS
 

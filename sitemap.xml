@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://awslabs.github.io/aws-tools-for-vmware/</loc>
-         <lastmod>2021-12-01</lastmod>
+         <lastmod>2022-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://awslabs.github.io/aws-tools-for-vmware/about/contributing/</loc>
-         <lastmod>2021-12-01</lastmod>
+         <lastmod>2022-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://awslabs.github.io/aws-tools-for-vmware/about/license/</loc>
-         <lastmod>2021-12-01</lastmod>
+         <lastmod>2022-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://awslabs.github.io/aws-tools-for-vmware/powershell/Upgrade-SqlServerStandaloneDatabaseEngineInstance.ps1/</loc>
-         <lastmod>2021-12-01</lastmod>
+         <lastmod>2022-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://awslabs.github.io/aws-tools-for-vmware/terraform/Deploy-XNumShellVMs/</loc>
-         <lastmod>2021-12-01</lastmod>
+         <lastmod>2022-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

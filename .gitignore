@@ -20,7 +20,6 @@
 *.rar
 *.tar
 *.zip
-!docs/Armor_226c1ea9-1078-402a-861c-10a845a0d173_en-US_HelpContent.zip
 
 # Logs and databases #
 ######################
@@ -72,3 +71,9 @@ override.tf.json
 # custom #
 ##########
 site
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+.python-version
